@@ -34,4 +34,4 @@ const Checkout = () => {
   );
 };
 
-export default Checkout; //go
+export default Checkout; 
