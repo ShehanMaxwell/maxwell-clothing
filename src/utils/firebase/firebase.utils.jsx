@@ -47,7 +47,8 @@ export const signInWithGoogleRedirect = () =>
 export const db = getFirestore();
 
 export const addCollectionAndDocuments = async (collectionkey, objectsToAdd) => {
-
+  const collectionRef = collection(db,collectionkey);
+  
 }
 
 export const createUserDocumentFromAuth = async (
