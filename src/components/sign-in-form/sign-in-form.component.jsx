@@ -1,9 +1,7 @@
 import { useState } from 'react';
 
 import FormInput from '../form-input/form-input.component';
-import Button from '../button/button.component';
-
-
+import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component';
 
 import {
   signInWithGooglePopup,
@@ -22,8 +20,6 @@ const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
 
-  
-
   console.log(formFields);
 
   const resetFormFields = () => {
@@ -32,18 +28,13 @@ const SignInForm = () => {
 
   const signInWithGoogle = async () => {
     await signInWithGooglePopup();
-
-    
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-       await signInAuthUserWithEmailAndPassword(
-        email,
-        password
-      );
+      await signInAuthUserWithEmailAndPassword(email, password);
 
       resetFormFields();
     } catch (error) {
@@ -91,7 +82,11 @@ const SignInForm = () => {
         />
         <div className='buttons-container'>
           <Button type='submit'>Sign In</Button>
-          <Button type='button' buttonType='google' onClick={signInWithGoogle}>
+          <Button
+            buttonType={BUTTON_TYPE_CLASSES.google}
+            type='button'
+            onClick={signInWithGoogle}
+          >
             Google Sign In
           </Button>
         </div>
