@@ -23,4 +23,4 @@ const DirectoryItem = ({ category }) => {
   );
 };
 
-export default DirectoryItem;
+export default DirectoryItem; //
