@@ -4,11 +4,19 @@ import { rootReducer } from './root-reducer';
 
 const loggerMiddleware = (store) => (next) => (action) => {
   if (!action.type) {
-    return;
+    return next(action);
   }
+
+  console.log('type:', action.type);
+  console.log('payload:', action.payload);
+  console.log('currentState:', store.getState());
+
+  next(action);
+
+  console.log('next state:', store.getState());
 };
 
-const middlewares = [logger];
+const middlewares = [loggerMiddleware];
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
