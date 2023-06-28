@@ -7,7 +7,7 @@ import ProductCard from '../../components/product-card/product-card.component';
 
 const Category = () => {
   const { category } = useParams();
-  console.log('render/re-rendering category component');
+  console.log('render/re-rendering category component');//
   const categoriesMap = useSelector(selectCategoriesMap);
   const [products, setProducts] = useState(categoriesMap[category]);
 
