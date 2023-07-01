@@ -21,7 +21,7 @@ const composeEnhancer =
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['cart'],//
+  whitelist: ['cart'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
