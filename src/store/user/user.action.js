@@ -29,4 +29,4 @@ export const signInSucess = (user) =>
   createAction(USER_ACTION_TYPES.SIGN_IN_SUCCESS, user);
 
 export const signInFailed = (error) =>
-  createAction(USER_ACTION_TYPES.SIGN_IN_FAILURE, error);
+  createAction(USER_ACTION_TYPES.SIGN_IN_FAILED, error);
