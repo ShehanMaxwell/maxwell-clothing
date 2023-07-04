@@ -19,9 +19,12 @@ export function* fetchCategoriesAsync() {
 }
 
 export function* onFetchCategories() {
-  yield takeLatest(CATEGORIES_ACTION_TYPES.FETCH_CATEGORIES_START);
+  yield takeLatest(
+    CATEGORIES_ACTION_TYPES.FETCH_CATEGORIES_START,
+    fetchCategoriesAsync
+  );
 }
 
 export function* categoriesSaga() {
-  yield all([]);
+  yield all([call(onFetchCategories)]);
 }
