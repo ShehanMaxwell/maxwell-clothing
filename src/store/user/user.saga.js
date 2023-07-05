@@ -16,8 +16,7 @@ export function* getSnapshotFromUserAuth(userAuth, additionalDetails) {
       userAuth,
       additionalDetails
     );
-    console.log(userSnapshot);
-    console.log(userSnapshot.data());
+    yield put(signInSucess({ id: userSnapshot.id, ...userSnapshot.data }));
   } catch (error) {
     yield put(signInFailed(error));
   }
@@ -27,15 +26,16 @@ export function* isUserAuthenticated() {
   try {
     const userAuth = yield call(getCurrentUser);
     if (!userAuth) return;
+    yield call(getSnapshotFromUserAuth, userAuth);
   } catch (error) {
     yield put(signInFailed(error));
   }
 }
 
 export function* onCheckUserSession() {
-  yield takeLatest(USER_ACTION_TYPES.CHECK_USER_SESSION);
+  yield takeLatest(USER_ACTION_TYPES.CHECK_USER_SESSION, isUserAuthenticated);
 }
 
 export function* userSagas() {
-  yield all([]);
+  yield all([call(onCheckUserSession)]);
 }
