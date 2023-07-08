@@ -27,4 +27,4 @@ const PaymentForm = () => {
   );
 };
 
-export default PaymentForm;//
+export default PaymentForm; //
