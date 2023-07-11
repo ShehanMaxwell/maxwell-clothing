@@ -1,4 +1,4 @@
-Live Website : https://jocular-fudge-b545d5.netlify.app/
+Live Website : https://64ad0f13eeaa9751ebbbf657--jocular-fudge-b545d5.netlify.app/
 
 This e-commerce website is made with React. 
 
