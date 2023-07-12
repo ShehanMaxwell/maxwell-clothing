@@ -51,4 +51,4 @@ export const signOutSuccess = () =>
   createAction(USER_ACTION_TYPES.SIGN_OUT_SUCCESS);
 
 export const signOutFailed = (error) =>
-  createAction(USER_ACTION_TYPES.SIGN_OUT_FAILED, error);
+  createAction(USER_ACTION_TYPES.SIGN_OUT_FAILED, error);//
