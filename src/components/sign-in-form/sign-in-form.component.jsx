@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 
 import './sign-in-form.styles.scss';
 import {
-  googleSignInstart,
+  googleSignInStart,
   emailSignInStart,
 } from '../../store/user/user.action';
 
@@ -27,7 +27,7 @@ const SignInForm = () => {
   };
 
   const signInWithGoogle = async () => {
-    dispatch(googleSignInstart());
+    dispatch(googleSignInStart());
   };
 
   const handleSubmit = async (event) => {
