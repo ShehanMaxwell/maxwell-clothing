@@ -55,7 +55,7 @@ const PaymentForm = () => {
           name: currentUser ? currentUser.displayName : 'Guest',
         },
       },
-    });
+    });//
 
     setIsProcessingPayment(false);
 
