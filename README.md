@@ -5,3 +5,5 @@ This e-commerce website is made with React.
 For the card payment use this test credt card = 4242 4242 4242 4242 04/50 242 42424
 
 or this card = 4242 4242 4242 4242 04/24 242 42424
+
+STRIPE PAYMENT GATWWAY INTERGRATED!!
